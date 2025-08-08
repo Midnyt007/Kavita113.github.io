@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name – Portfolio</title>
+  <meta name="description" content="Personal website of Your Name: education, experience, skills, publications, projects, and hobbies." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Your Name – Portfolio" />
+  <meta property="og:description" content="Education • Experience • Skills • Publications • Hobbies • Contact" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --bg: #0b0c0f;
+      --card: #121417;
+      --text: #e6e7e9;
+      --muted: #9aa0a6;
+      --accent: #7c3aed; /* indigo/violet */
+      --accent-2: #22c55e; /* emerald */
+      --ring: #2a2f3a;
+      --link: #93c5fd;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0b0c0f;
+      --muted: #4b5563;
+      --accent: #4f46e5;
+      --accent-2: #10b981;
+      --ring: #e5e7eb;
+      --link: #1d4ed8;
+      --shadow: 0 8px 20px rgba(2,6,23,.08);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg); color: var(--text);
+    }
+    .container { max-width: 1040px; margin: 0 auto; padding: 24px; }
+    header { position: sticky; top: 0; backdrop-filter: blur(6px); background: color-mix(in oklab, var(--bg) 80%, transparent); border-bottom: 1px solid var(--ring); z-index: 50; }
+    nav { display: flex; align-items: center; gap: 16px; justify-content: space-between; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; }
+    .navlinks { display: flex; flex-wrap: wrap; gap: 12px; }
+    .navlinks a { text-decoration: none; color: var(--muted); padding: 8px 10px; border-radius: 10px; }
+    .navlinks a:hover { color: var(--text); background: var(--card); box-shadow: var(--shadow); }
+    .btn { appearance: none; border: 1px solid var(--ring); background: var(--card); color: var(--text); padding: 10px 14px; border-radius: 12px; cursor: pointer; box-shadow: var(--shadow); }
+
+    .hero { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; align-items: center; padding: 48px 0; }
+    .hero-card { background: var(--card); border: 1px solid var(--ring); border-radius: 18px; padding: 28px; box-shadow: var(--shadow); }
+    .hero h1 { margin: 8px 0 8px; font-size: clamp(28px, 5vw, 44px); }
+    .hero p { color: var(--muted); font-size: 1.05rem; }
+    .tag { display: inline-flex; align-items: center; gap: 8px; font-size: .92rem; color: var(--muted); }
+    .tag i { width: 8px; height: 8px; background: var(--accent-2); border-radius: 999px; display: inline-block; }
+    .cta { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+    .cta a, .cta button { text-decoration: none; }
+
+    .avatar { aspect-ratio: 1 / 1; width: 220px; border-radius: 16px; border: 1px solid var(--ring); background: linear-gradient(145deg, var(--card), #1b1f27); display: grid; place-content: center; font-weight: 700; }
+
+    section { padding: 28px 0; }
+    h2 { font-size: clamp(22px, 4vw, 32px); margin: 8px 0 12px; }
+    .grid { display: grid; gap: 16px; }
+    .two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    @media (max-width: 900px){ .hero { grid-template-columns: 1fr; } .two, .three { grid-template-columns: 1fr; } }
+
+    .card { background: var(--card); border: 1px solid var(--ring); border-radius: 16px; padding: 18px; box-shadow: var(--shadow); }
+    .card h3 { margin: 6px 0 4px; font-size: 1.05rem; }
+    .meta { color: var(--muted); font-size: .92rem; }
+    ul.clean { list-style: none; margin: 0; padding: 0; }
+    .skill { display: inline-flex; align-items: center; padding: 6px 10px; border: 1px solid var(--ring); border-radius: 999px; margin: 6px 6px 0 0; background: color-mix(in oklab, var(--card) 85%, var(--accent) 15%); font-size: .92rem; }
+
+    footer { padding: 36px 0 64px; color: var(--muted); text-align: center; }
+    a { color: var(--link); }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Your Name</div>
+        <div class="navlinks">
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#hobbies">Hobbies</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button id="themeToggle" class="btn" aria-label="Toggle theme">Toggle theme</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="tag"><i></i> Open to collaborations</div>
+        <h1>Hi, I’m <span style="color:var(--accent)">Your Name</span>.</h1>
+        <p>Short bio: your current role, interests, and what you’re looking for (1–2 sentences).</p>
+        <div class="cta">
+          <a class="btn" href="/cv.pdf" download>Download CV</a>
+          <a class="btn" href="#contact">Contact me</a>
+          <a class="btn" href="https://github.com/yourhandle" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/yourhandle" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="avatar">Your Photo</div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>Write a short paragraph about your background and interests. Keep it personable. Mention your focus areas and what you enjoy working on.</p>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Degree • University</h3>
+          <div class="meta">201X–202X • City, Country</div>
+          <ul>
+            <li>Thesis: <em>Title of your thesis</em></li>
+            <li>Relevant coursework: A, B, C</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Degree • University</h3>
+          <div class="meta">201X–202X • City, Country</div>
+          <ul>
+            <li>Award / Scholarship</li>
+            <li>Clubs / Activities</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Job Title • Company</h3>
+          <div class="meta">YYYY–Present • Location</div>
+          <ul>
+            <li>Impact-focused bullet with a number: increased X by Y% using Z.</li>
+            <li>Tech stack / methods / tools used.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Job Title • Company</h3>
+          <div class="meta">YYYY–YYYY • Location</div>
+          <ul>
+            <li>Concise achievement bullet.</li>
+            <li>Another impact/result bullet.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="card">
+        <div>
+          <strong>Languages:</strong>
+          <span class="skill">Python</span>
+          <span class="skill">C++</span>
+          <span class="skill">JavaScript</span>
+        </div>
+        <div style="margin-top:10px">
+          <strong>ML/AI:</strong>
+          <span class="skill">PyTorch</span>
+          <span class="skill">TensorFlow</span>
+          <span class="skill">scikit-learn</span>
+        </div>
+        <div style="margin-top:10px">
+          <strong>Tools:</strong>
+          <span class="skill">Docker</span>
+          <span class="skill">Git</span>
+          <span class="skill">Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Paper Title</h3>
+          <div class="meta">Venue • Year</div>
+          <p>Author1, Author2, <strong>Your Name</strong>. One-line summary of the contribution.</p>
+          <p><a href="#">PDF</a> • <a href="#">Code</a> • <a href="#">DOI</a></p>
+        </article>
+        <article class="card">
+          <h3>Another Paper</h3>
+          <div class="meta">Venue • Year</div>
+          <p>Authors… Short blurb.</p>
+          <p><a href="#">PDF</a> • <a href="#">Code</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Project Name</h3>
+          <p>1–2 lines explaining what it does and why it’s cool. <em>Tech:</em> A, B, C.</p>
+          <p><a href="#">GitHub</a> • <a href="#">Live Demo</a></p>
+        </article>
+        <article class="card">
+          <h3>Another Project</h3>
+          <p>Short description. <em>Tech:</em> X, Y.</p>
+          <p><a href="#">GitHub</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="hobbies">
+      <h2>Hobbies</h2>
+      <div class="grid three">
+        <article class="card"><h3>Photography</h3><p>Landscape and street.</p></article>
+        <article class="card"><h3>Cycling</h3><p>Weekend rides, 40–70 km.</p></article>
+        <article class="card"><h3>Cooking</h3><p>Indian + Mediterranean.</p></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p>Best way to reach me: <a href="mailto:you@example.com">you@example.com</a></p>
+        <form name="contact" method="POST" data-netlify="true" style="margin-top:12px">
+          <input type="hidden" name="form-name" value="contact" />
+          <div class="grid two">
+            <label> Name<br><input required name="name" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:var(--bg);color:var(--text)"/></label>
+            <label> Email<br><input required type="email" name="email" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:var(--bg);color:var(--text)"/></label>
+          </div>
+          <label> Message<br><textarea required name="message" rows="5" style="width:100%;padding:10px;border-radius:10px;border:1px solid var(--ring);background:var(--bg);color:var(--text)"></textarea></label>
+          <div style="margin-top:10px"><button class="btn" type="submit">Send</button></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© <span id="y"></span> Your Name • Built with plain HTML/CSS</div>
+  </footer>
+
+  <script>
+    const y = document.getElementById('y'); y.textContent = new Date().getFullYear();
+    const btn = document.getElementById('themeToggle');
+    const KEY = 'pref-theme';
+    const apply = (mode) => document.documentElement.setAttribute('data-theme', mode);
+    const stored = localStorage.getItem(KEY);
+    if (stored) apply(stored);
+    btn.addEventListener('click', () => {
+      const cur = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      apply(cur); localStorage.setItem(KEY, cur);
+    });
+    // Default to dark unless user prefers light
+    if (!stored && window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) apply('light');
+  </script>
+</body>
+</html>
